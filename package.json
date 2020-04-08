@@ -9,6 +9,11 @@
   },
   "dependencies": {
     "core-js": "^3.6.4",
+    "element-ui": "^2.13.0",
+    "less": "^3.11.1",
+    "less-loader": "^5.0.0",
+    "ts-loader": "^6.2.2",
+    "typescript": "^3.8.3",
     "vue": "^2.6.11"
   },
   "devDependencies": {

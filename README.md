@@ -1,24 +1,9 @@
-# hl-admin-master-ts
+### hl-admin-master-ts
 
-## Project setup
-```
-yarn install
-```
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+### 依赖
+1. yarn add typescript ts-loader typescript   //  安装typescript  将js 转成 ts
 
-### Compiles and minifies for production
-```
-yarn build
-```
+2. yarn add less less-loader --dev            //  安装 less 预处理器
 
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+3. yarn add element-ui                        //  安装 element-ui
