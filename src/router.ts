@@ -17,9 +17,9 @@ const initRouters = [
     component: _import('/Login/Login')
   },
   {
-    path: '/Home',
-    name: 'Home',
-    component: _import('/Home/Home')
+    path: '/NotFound/NotFound',
+    name: 'NotFound',
+    component: _import('/NotFound/NotFound')
   }
 ]
 // 添加路由方法
@@ -41,7 +41,6 @@ let isReplace = true // 控制刷新
 router.beforeEach((to, from, next) => {
   let states: any = store.state
   let token: String = states.base.xToken
-  console.log( token, !token )
   let limit: Array<any> = states.base.nowLimit
   if ( !token ) { // 没有token 并且 进入的不是登录页面  重定向到登录页面
     if ( to.path !== '/' ) {
@@ -62,7 +61,6 @@ router.beforeEach((to, from, next) => {
       if ( isReplace ) { // 刷新
         if ( to.path !== from.path ) {
           isReplace = false
-          console.log( '进来' )
           unit.addRouter( limit )
           next({
             path: to.path

@@ -3,6 +3,7 @@
     el-menu(
       default-active='1-1'
       class="hl-aside-menu"
+      router
     )
       hl-submenu(
         :submenuList="base.nowLimit"

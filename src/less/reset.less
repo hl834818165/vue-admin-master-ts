@@ -2,14 +2,25 @@
 @import './home.less';
 @import './aside.less';
 @import './header.less';
+@import './login.less';
 
 @textDefault: 16px;
 
-@oneMargin: 24px;
+@marginDefault: 24px;
 
+@borderDefault: 1px solid #ebeef5;
+@shadowDefault: 0 2px 12px 0 rgba(0,0,0,.1);
+
+.boxCenter{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#hlAside,
+#hlHeader,
 #app,
 #Home,
-#hlAside,
-#hlHeader{
+#Login{
   height: 100%;
 }

@@ -8,8 +8,13 @@
   import { Vue, Component } from 'vue-property-decorator'
 
   @Component({
-    name: 'Index'
+    name: 'NotFound'
   })
-  export default class Index extends Vue {
+  export default class NotFound extends Vue {
+
   }
 </script>
+
+<style scoped>
+
+</style>
