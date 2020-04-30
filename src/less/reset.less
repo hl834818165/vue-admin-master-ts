@@ -3,13 +3,46 @@
 @import './aside.less';
 @import './header.less';
 @import './login.less';
+@import './hl-router.less';
+@import './hl-table.less';
 
-@textDefault: 16px;
-
-@marginDefault: 24px;
-
-@borderDefault: 1px solid #ebeef5;
-@shadowDefault: 0 2px 12px 0 rgba(0,0,0,.1);
+@defaultSize: 16px;
+@whiteColor: #fff;
+@activeColor: #10CFDD;
+// 按钮默认色彩
+.btnAction {
+  color: @whiteColor;
+  background: @activeColor;
+}
+// 默认移入手柄
+.handleDefault {
+  cursor: pointer;
+}
+// 默认边框
+.borderDefault {
+  border: 1px solid #ebeef5;
+}
+.transitionDefault {
+  transition: .3s ease-in;
+}
+.paddingAllDefault {
+  padding: @defaultSize * 1.5;
+}
+// 列边距
+.paddingColDefault {
+  .paddingAllDefault;
+  padding-left: 0;
+  padding-right: 0;
+}
+// 行边距
+.paddingRowDefault {
+  .paddingAllDefault;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.shadowDefault {
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+};
 
 .boxCenter{
   position: absolute;

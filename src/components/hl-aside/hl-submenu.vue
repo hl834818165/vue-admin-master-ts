@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  div#hlSubmenu
     div(
       v-for="item in submenuList"
       :key="item.id"

@@ -1,0 +1,40 @@
+#hlRouter {
+  height: @defaultSize*2.5;
+  .paddingRowDefault;
+  .borderDefault;
+  .shadowDefault;
+  ul {
+    display: flex;
+    margin-top: @defaultSize * .25;
+    li {
+      position: relative;
+      .paddingRowDefault;
+      .borderDefault;
+      .handleDefault;
+      .transitionDefault;
+      font-size: @defaultSize;
+      height: @defaultSize * 2;
+      line-height: @defaultSize * 2;
+      margin-right: @defaultSize - 8px;
+      border-radius: @defaultSize - 12px;
+      &.active{
+        &::before {
+          position: absolute;
+          content: '';
+          top: 50%;
+          left: 6px;
+          transform: translate(0, -50%);
+          width: @defaultSize - 6;
+          height: @defaultSize - 6;
+          border-radius: 50%;
+          background: @whiteColor;
+        }
+      }
+      &.active,
+      &:hover {
+        .btnAction;
+      }
+      &.default {}
+    }
+  }
+}

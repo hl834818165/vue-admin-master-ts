@@ -4,28 +4,28 @@
   align-items: center;
   justify-content: space-between;
   .title{
-    font-size: 22px;
+    font-size: @defaultSize * 1.6;
     font-weight: 600;
   }
   .nav-list{
     display: flex;
     align-items: center;
     i{
-      font-size: @textDefault + 6;
-      margin-left: @marginDefault;
+      font-size: @defaultSize + 6;
+      margin-left: @defaultSize * 1.5;
     }
     .nav-user{
       display: flex;
-      margin-left: @marginDefault;
+      margin-left: @defaultSize * 1.5;
       .user-img{
-        width: 38px;
-        height: 38px;
+        width: @defaultSize * 2.5;
+        height: @defaultSize * 2.5;
         border-radius: 50%;
         background: #e6e6e6;
       }
       .user-name{
-        margin-left: @marginDefault - 12;
-        line-height: 38px;
+        margin-left: @defaultSize - 12;
+        line-height: @defaultSize * 2.5;
       }
     }
   }

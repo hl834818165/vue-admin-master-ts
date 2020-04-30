@@ -1,15 +1,15 @@
 #Login{
   position: relative;
   .login-box{
-    width: 280px;
-    padding: 20px;
+    width: @defaultSize * 17.5;
+    padding: @defaultSize * 1.25;
     .boxCenter;
-    border: @borderDefault;
-    box-shadow: @shadowDefault;
-    border-radius: @marginDefault - 12;
+    .borderDefault;
+    .shadowDefault;
+    border-radius: @defaultSize * .75;
     .login-title{
       text-align: center;
-      margin-bottom: @marginDefault;
+      margin-bottom: @defaultSize * 1.5;
     }
     .login-submit{
       width: 100%;

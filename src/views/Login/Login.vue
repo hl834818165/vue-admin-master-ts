@@ -31,7 +31,8 @@
 
 <script lang="ts">
   import { Vue, Component } from 'vue-property-decorator'
-  import { Action } from 'vuex-class'
+  import { State, Action } from 'vuex-class'
+  import unit from '../../unit/unit'
   import { allLimit, nowLimit } from '../../unit/limit'
 
   const validatorUser = ( rule: any, value: String, callback: any ) => {
@@ -52,9 +53,11 @@
     name: 'Login'
   })
   export default class Login extends Vue {
+    @State private base!: { nowRouter: {}, clickRouter: String }
     @Action private ACT_ALLLIMIT!: ( value: Array<any> ) => void
     @Action private ACT_NOWLIMIT!: ( value: Array<any> ) => void
     @Action private ACT_XTOKEN!: ( value: String ) => void
+    @Action private ACT_FIRSTPATH!: ( value: String ) => void
     
     private loginModel: { username: String, password: String } = {
       username: '',
@@ -68,18 +71,29 @@
         { validator: validatorPass, trigger: 'blur' }
       ]
     }
+    mounted () {
+      console.log( this.base )
+    }
 
     submit () {
+      // 拿到第一个路由
+      let firstPath
+      unit.addRouter( nowLimit )
       this.ACT_ALLLIMIT( allLimit )
       this.ACT_NOWLIMIT( nowLimit )
       this.ACT_XTOKEN( '123' )
+      if ( nowLimit[0].children.length ) {
+        firstPath = nowLimit[0].children[0].link
+      } else {
+        firstPath = nowLimit[0].link
+      }
+      // this.$router.push({
+      //   path: '/Index/Index'
+      // })
+      this.ACT_FIRSTPATH(firstPath)
       this.$router.push({
-        path: '/Home/Home'
+        path: firstPath
       })
     }
   }
 </script>
-
-<style scoped>
-
-</style>

@@ -1,7 +1,7 @@
 <template lang="pug">
   div#hlAside
     el-menu(
-      default-active='1-1'
+      :default-active='base.clickRouter'
       class="hl-aside-menu"
       router
     )
@@ -20,6 +20,7 @@
     }
   })
   export default class hlAside extends Vue {
-    @State private base!: { nowLimit: Array<any> }
+    @State private base!: { nowLimit: Array<any>, clickRouter: String }
+
   }
 </script>

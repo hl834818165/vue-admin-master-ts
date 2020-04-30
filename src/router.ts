@@ -28,7 +28,7 @@ const createRouter = () => new Router({
 })
 
 // 添加初始路由
-const router = createRouter()
+const router: any = createRouter()
 
 // 解决点击同一个路由出现错误的情况
 const originalPush: Function = Router.prototype.push
@@ -38,7 +38,7 @@ Router.prototype.push = function push( location: RawLocation ) {
 
 // 进入路由之前 动态添加路由
 let isReplace = true // 控制刷新
-router.beforeEach((to, from, next) => {
+router.beforeEach((to: any, from: any, next: any) => {
   let states: any = store.state
   let token: String = states.base.xToken
   let limit: Array<any> = states.base.nowLimit
@@ -54,11 +54,11 @@ router.beforeEach((to, from, next) => {
     } else {
       next()
     }
-  } else { // 有token
+  } else {  // 有token
     if ( to.path === '/' ) { // 有token进入登录页面
       next()
     } else { // 有token进入非登录页面
-      if ( isReplace ) { // 刷新
+      if ( isReplace ) {          // 刷新
         if ( to.path !== from.path ) {
           isReplace = false
           unit.addRouter( limit )
@@ -68,17 +68,21 @@ router.beforeEach((to, from, next) => {
         } else {
           next()
         }
-      } else { // 不是刷新
+      } else {                    // 非刷新
         next()
       }
+      if (to.name) unit.setClickRouter( to.name, to.path )
     }
   }
 })
 
 // // 重置路由
-// export function resetRouter () {
-//   const newRouter = createRouter()
-//   router.matcher = newRouter.matcher
-// }
+function resetRouter () {
+  const newRouter: any = createRouter()
+  router.matcher = newRouter.matcher
+}
 
-export default router
+export {
+  router,
+  resetRouter
+}

@@ -1,7 +1,5 @@
-<template>
-  <div>
-
-  </div>
+<template lang="pug">
+  div#Index {{ msg }}
 </template>
 
 <script lang="ts">
@@ -11,5 +9,6 @@
     name: 'Index'
   })
   export default class Index extends Vue {
+    private msg: String = 'index'
   }
 </script>
