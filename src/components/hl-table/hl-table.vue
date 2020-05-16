@@ -5,6 +5,7 @@
       :data="tableList.dataList"
     )
       el-table-column(
+        align="center"
         v-for="item in tableList.expandList"
         :key="item.prop"
         :prop="item.prop"
