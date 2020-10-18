@@ -1,14 +1,10 @@
-
-@import './home.less';
-@import './aside.less';
-@import './header.less';
-@import './login.less';
-@import './hl-router.less';
-@import './hl-table.less';
-
 @defaultSize: 16px;
-@whiteColor: #fff;
+@whiteColor: #ffffff;
 @activeColor: #10CFDD;
+@activeColorHover: #62D5DD;
+@headerColor: #222222;
+@infoColor: #808080;
+@redirectColor: #97a8be;
 // 按钮默认色彩
 .btnAction {
   color: @whiteColor;
@@ -55,6 +51,54 @@
 #app,
 #Home,
 #Login,
-#ProgramList{
+#NotFound,
+#table-page{
   height: 100%;
+}
+
+.hl-page-left-enter,
+.hl-page-left-leave-active {
+  opacity: 0;
+}
+.hl-page-left-enter {
+  transform: translateX(30px);
+}
+.hl-page-left-leave-active {
+  transform: translateX(-30px);
+}
+.hl-page-left-enter-active, 
+.hl-page-left-leave-active {
+  transition: .3s all ease;
+}
+
+/* breadcrumb transition */
+.hl-breadcrumb-enter-active,
+.hl-breadcrumb-leave-active {
+  transition: .5s all ease;
+}
+
+.hl-breadcrumb-enter,
+.hl-breadcrumb-leave-active {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.hl-breadcrumb-move {
+  transition: .5s all ease;
+}
+
+.hl-breadcrumb-leave-active {
+  position: absolute;
+}
+
+.el-button--active {
+  color: @whiteColor;
+  background-color: @activeColor;
+  border-color: @activeColor;
+}
+.el-button--active:focus,
+.el-button--active:hover {
+  color: @whiteColor;
+  background-color: @activeColorHover;
+  border-color: @activeColorHover;
 }

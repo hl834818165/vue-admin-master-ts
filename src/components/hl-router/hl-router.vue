@@ -12,11 +12,14 @@
 <script lang="ts">
   import { Vue, Component, Watch } from 'vue-property-decorator'
   import { State } from 'vuex-class'
-  @Component({})
+  @Component({
+    name: 'hl-router'
+  })
   export default class hlRouter extends Vue {
-    @State private base!: { nowRouter: {}, clickRouter: String }
+    @State private base!: { nowRouter: any, clickRouter: string }
     private routerList: Array<{ itemName: string, itemPath: string }> = []
-    
+    $router: any
+
     mounted () {
       this.setRouter()
     }
@@ -26,7 +29,7 @@
     }
     // 设置路由列表
     setRouter () {
-      let _base: any = this.base
+      let _base: { nowRouter: any } = this.base
       this.routerList = Object.keys(_base.nowRouter).map((item: string) => {
         return {
           itemName: item,
@@ -34,7 +37,7 @@
         }
       })
     }
-    changeRoute ( item: { itemPath: any } ) {
+    changeRoute ( item: { itemPath: string } ) {
       let list = {
         path: item.itemPath
       }
@@ -42,3 +45,6 @@
     }
   }
 </script>
+<style lang="less">
+@import url('../../less/hl-router.less');
+</style>

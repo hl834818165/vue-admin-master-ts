@@ -19,3 +19,7 @@
 7. yarn add vuex-persistedstate                         //  安装vuex持久化
 
 8. yarn add axios                                       //  安装 axios
+
+9. yarn add image-webpack-loader
+
+10. yarn add compression-webpack-plugin

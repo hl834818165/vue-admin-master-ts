@@ -1,13 +1,16 @@
+@import './reset.less';
+
 #hlTable {
   height: 100%;
   
   .table-box {
-    height: calc(~'100% - 60px');
+    @paginationheight: (@defaultSize * 2.5 + @defaultSize * 1.25);
+    height: calc(~'100% - @{paginationheight}');
   }
   .pagination-box {
     display: flex;
-    height: 40px;
-    margin-top: 20px;
     align-items: center;
+    height: @defaultSize / 2.5;
+    margin-top: @defaultSize * 1.25;
   }
 }

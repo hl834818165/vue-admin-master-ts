@@ -1,0 +1,172 @@
+[
+    {
+      "name": "黑龙江",
+      "path": "heilongjiang",
+      "value": [127.9688, 45.368]
+    },
+    {
+      "name": "吉林",
+      "path": "jilin",
+      "value": [125.8154, 44.2584]
+    },
+    {
+      "name": "辽宁",
+      "path": "liaoning",
+      "value": [123.1238, 42.1216]
+    },
+    {
+      "name": "内蒙古",
+      "path": "neimenggu",
+      "value": [110.3467, 41.4899]
+    },
+    {
+      "name": "河北",
+      "path": "hebei",
+      "value": [114.4995, 38.1006]
+    },
+    {
+      "name": "天津",
+      "path": "tianjin",
+      "value": [117.4219, 39.4189]
+    },
+    {
+      "name": "山东",
+      "path": "shandong",
+      "value": [117.1582, 36.8701]
+    },
+    {
+      "name": "北京",
+      "path": "beijing",
+      "value": [116.4551, 40.2539]
+    },
+    {
+      "name": "山西",
+      "path": "shanxi",
+      "value": [112.3352, 37.9413]
+    },
+    {
+      "name": "陕西",
+      "path": "shanxi1",
+      "value": [109.1162, 34.2004]
+    },
+    {
+      "name": "河南",
+      "path": "henan",
+      "value": [113.4668, 34.6234]
+    },
+    {
+      "name": "江苏",
+      "path": "jiangsu",
+      "value": [118.8062, 31.9208]
+    },
+    {
+      "name": "上海",
+      "path": "shanghai",
+      "value": [121.4648, 31.2891]
+    },
+    {
+      "name": "安徽",
+      "path": "anhui",
+      "value": [117.29, 32.0581]
+    },
+    {
+      "name": "甘肃",
+      "path": "gansu",
+      "value": [103.5901, 36.3043]
+    },
+    {
+      "name": "宁夏",
+      "path": "ningxia",
+      "value": [106.3586, 38.1775]
+    },
+    {
+      "name": "云南",
+      "path": "yunnan",
+      "value": [102.9199, 25.4663]
+    },
+    {
+      "name": "重庆",
+      "path": "chongqing",
+      "value": [108.384366, 30.439702]
+    },
+    {
+      "name": "湖南",
+      "path": "hunan",
+      "value": [113.0823, 28.2568]
+    },
+    {
+      "name": "新疆",
+      "path": "xinjiang",
+      "value": [87.9236, 43.5883]
+    },
+    {
+      "name": "浙江",
+      "path": "zhejiang",
+      "value": [119.5313, 29.8773]
+    },
+    {
+      "name": "江西",
+      "path": "jiangxi",
+      "value": [116.0046, 28.6633]
+    },
+    {
+      "name": "湖北",
+      "path": "hubei",
+      "value": [114.3896, 30.6628]
+    },
+    {
+      "name": "广西",
+      "path": "guangxi",
+      "value": [108.479, 23.1152]
+    },
+    {
+      "name": "福建",
+      "path": "fujian",
+      "value": [119.4543, 25.9222]
+    },
+    {
+      "name": "贵州",
+      "path": "guizhou",
+      "value": [106.6992, 26.7682]
+    },
+    {
+      "name": "广东",
+      "path": "guangdong",
+      "value": [113.12244, 23.009505]
+    },
+    {
+      "name": "青海",
+      "path": "qinghai",
+      "value": [101.4038, 36.8207]
+    },
+    {
+      "name": "西藏",
+      "path": "xizang",
+      "value": [91.11, 29.97]
+    },
+    {
+      "name": "四川",
+      "path": "sichuan",
+      "value": [103.9526, 30.7617]
+    },
+    {
+      "name": "海南",
+      "path": "hainan",
+      "value": [110.3893, 19.8516]
+    },
+    {
+      "name": "台湾",
+      "path": "taiwan",
+      "value": [120.582, 23.0464]
+    },
+    {
+      "name": "香港",
+      "path": "xianggang",
+      "value": [114.18299, 22.276345]
+    },
+    {
+      "name": "澳门",
+      "path": "aomen",
+      "value": [113.559954, 22.124049]
+    }
+  ]

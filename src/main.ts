@@ -7,7 +7,6 @@ import ElementUI from 'element-ui'
 
 import 'element-ui/lib/theme-chalk/index.css'
 
-import './less/reset.less'
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)

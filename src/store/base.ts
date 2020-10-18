@@ -4,25 +4,30 @@ export default {
   state: {
     allLimit: [],   // 总路由表
     nowLimit: [],   // 当前路由表
-    firstPath: '',   // 当前路由表第一个路由
+    listLimit: [],  // 点击路由的树形
     nowRouter: {},  // 当前点击的路由集合
+    firstPath: '',   // 当前路由表第一个路由
     clickRouter: '',// 当前点击的路由
     xToken: ''      // 用户token
   },
   mutations: {
-    MUT_STATE_INT ( state: vuexState, value: vuexState ) {
-      state.allLimit = value.allLimit
-      state.nowLimit = value.nowLimit
-      state.firstPath = value.firstPath
-      state.nowRouter = value.nowRouter
-      state.clickRouter = value.clickRouter
-      state.xToken = value.xToken
+    MUT_STATE_INT (state: vuexState) {
+      state.allLimit = []
+      state.nowLimit = []
+      state.listLimit = []
+      state.nowRouter = {}
+      state.firstPath = ''
+      state.clickRouter = ''
+      state.xToken = ''
     },
     MUT_ALLLIMIT ( state: { allLimit: Array<any> }, value: Array<any> ) {
       state.allLimit = value
     },
     MUT_NOWLIMIT ( state: { nowLimit: Array<any> }, value: Array<any> ) {
       state.nowLimit = value
+    },
+    MUT_LISTLIMIT (state: {listLimit: Array<String>}, value: Array<String>) {
+      state.listLimit = value
     },
     MUT_FIRSTPATH ( state: { firstPath: String }, value: String ) {
       state.firstPath = value
@@ -38,14 +43,17 @@ export default {
     }
   },
   actions: {
-    ACT_STATE_INT ( context: { commit: Commit }, value: vuexState ) {
-      context.commit( 'MUT_STATE_INT', value )
+    ACT_STATE_INT (context: {commit: Commit}) {
+      context.commit('MUT_STATE_INT')
     },
     ACT_ALLLIMIT ( context: { commit: Commit }, value: Array<any> ) {
       context.commit( 'MUT_ALLLIMIT', value )
     },
     ACT_NOWLIMIT ( context: { commit: Commit }, value: Array<any> ) {
       context.commit( 'MUT_NOWLIMIT', value )
+    },
+    ACT_LISTLIMIT (context: {commit: Commit}, value: Array<String>) {
+      context.commit('MUT_LISTLIMIT', value)
     },
     ACT_FIRSTPATH ( context: { commit: Commit }, value: String ) {
       context.commit( 'MUT_FIRSTPATH', value )

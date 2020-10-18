@@ -8,9 +8,14 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@types/echarts": "^4.8.0",
     "axios": "^0.19.2",
+    "babel-polyfill": "^6.26.0",
+    "compression-webpack-plugin": "^6.0.3",
     "core-js": "^3.6.4",
+    "echarts": "^4.9.0",
     "element-ui": "^2.13.0",
+    "image-webpack-loader": "^7.0.1",
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
     "pug": "^2.0.4",

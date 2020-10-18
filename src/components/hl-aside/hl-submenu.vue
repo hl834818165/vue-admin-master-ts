@@ -26,6 +26,7 @@
   import { Vue, Component, Prop } from 'vue-property-decorator'
   import hlMenu from './hl-menu.vue'
   @Component({
+    name: 'hl-submenu',
     components: {
       hlMenu
     }
@@ -35,3 +36,6 @@
     private submenuList!: {}
   }
 </script>
+<style lang="less">
+@import url('../../less/hl-aside.less');
+</style>

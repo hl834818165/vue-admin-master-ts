@@ -10,7 +10,12 @@
           hl-header
         hl-router.home-router
         el-main.home-main
-          router-view
+          transition(
+            name="hl-page-left"
+            mode="out-in"
+            appear
+          )
+            router-view
 </template>
 
 <script lang="ts">
@@ -27,5 +32,9 @@
     }
   })
   export default class Home extends Vue {
+    
   }
 </script>
+<style lang="less">
+@import url('../../less/home.less');
+</style>

@@ -1,8 +1,13 @@
+@import './reset.less';
+
 #hlHeader{
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  .no-redirect {
+    color: @redirectColor;
+  }
   .title{
     font-size: @defaultSize * 1.6;
     font-weight: 600;
@@ -21,7 +26,7 @@
         width: @defaultSize * 2.5;
         height: @defaultSize * 2.5;
         border-radius: 50%;
-        background: #e6e6e6;
+        background: @redirectColor;
       }
       .user-name{
         margin-left: @defaultSize - 12;

@@ -1,11 +1,13 @@
+@import './reset.less';
 #hlRouter {
-  height: @defaultSize*2.5;
+  // height: @defaultSize*2.5;
   .paddingRowDefault;
   .borderDefault;
   .shadowDefault;
   ul {
     display: flex;
     margin-top: @defaultSize * .25;
+    margin-bottom: @defaultSize * .25;
     li {
       position: relative;
       .paddingRowDefault;
@@ -15,17 +17,17 @@
       font-size: @defaultSize;
       height: @defaultSize * 2;
       line-height: @defaultSize * 2;
-      margin-right: @defaultSize - 8px;
-      border-radius: @defaultSize - 12px;
+      margin-right: @defaultSize * 0.5;
+      border-radius: @defaultSize * 0.25;
       &.active{
         &::before {
           position: absolute;
           content: '';
           top: 50%;
-          left: 6px;
+          left: (@defaultSize / 1.6) * 0.6;
           transform: translate(0, -50%);
-          width: @defaultSize - 6;
-          height: @defaultSize - 6;
+          width: @defaultSize / 1.6;
+          height: @defaultSize / 1.6;
           border-radius: 50%;
           background: @whiteColor;
         }

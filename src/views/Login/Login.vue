@@ -32,7 +32,7 @@
 <script lang="ts">
   import { Vue, Component } from 'vue-property-decorator'
   import { State, Action } from 'vuex-class'
-  import unit from '../../unit/unit'
+  import { addRouter } from '../../unit/unit'
   import { allLimit, nowLimit } from '../../unit/limit'
 
   const validatorUser = ( rule: any, value: String, callback: any ) => {
@@ -71,6 +71,7 @@
         { validator: validatorPass, trigger: 'blur' }
       ]
     }
+    $router: any
     mounted () {
       console.log( this.base )
     }
@@ -78,7 +79,7 @@
     submit () {
       // 拿到第一个路由
       let firstPath
-      unit.addRouter( nowLimit )
+      addRouter( nowLimit )
       this.ACT_ALLLIMIT( allLimit )
       this.ACT_NOWLIMIT( nowLimit )
       this.ACT_XTOKEN( '123' )
@@ -97,3 +98,6 @@
     }
   }
 </script>
+<style lang="less">
+@import url('../../less/login.less');
+</style>

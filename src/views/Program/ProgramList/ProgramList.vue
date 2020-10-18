@@ -1,5 +1,5 @@
 <template lang="pug">
-  div#ProgramList
+  div#table-page
     hl-table(
       :tableList="tableList"
     )
@@ -7,7 +7,7 @@
 
 <script lang="ts">
   import { Vue, Component } from 'vue-property-decorator'
-  import hlTable from '../../../components/hl-table/hl-table.vue'
+  import hlTable from '@/components/hl-table/hl-table.vue'
   @Component({
     name: 'ProgramList',
     components: {
@@ -56,8 +56,74 @@
           date: '2016-05-03',
           name: '千秋',
           address: '上海市普陀区金沙江路 1518 弄'
+        },
+        {
+          id: 3,
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        },
+        {
+          id: 4,
+          date: '2016-05-04',
+          name: '李小白',
+          address: '上海市普陀区金沙江路 1518 弄'
+        },
+        {
+          id: 5,
+          date: '2016-05-03',
+          name: '千秋',
+          address: '上海市普陀区金沙江路 1518 弄'
+        },
+        {
+          id: 6,
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        },
+        {
+          id: 7,
+          date: '2016-05-04',
+          name: '李小白',
+          address: '上海市普陀区金沙江路 1518 弄'
+        },
+        {
+          id: 8,
+          date: '2016-05-03',
+          name: '千秋',
+          address: '上海市普陀区金沙江路 1518 弄'
+        },
+        {
+          id: 9,
+          date: '2016-05-02',
+          name: '王小虎',
+          address: '上海市普陀区金沙江路 1518 弄'
+        },
+        {
+          id: 10,
+          date: '2016-05-04',
+          name: '李小白',
+          address: '上海市普陀区金沙江路 1518 弄'
+        },
+        {
+          id: 11,
+          date: '2016-05-03',
+          name: '千秋',
+          address: '上海市普陀区金沙江路 1518 弄'
         }
       ]
+    }
+    created () {
+      console.log('program created')
+    }
+    mounted () {
+      console.log('program mounted')
+    }
+    updated () {
+      console.log('program updated')
+    }
+    destroyed () {
+      console.log('program destroyed')
     }
   }
 </script>
