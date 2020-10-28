@@ -2,6 +2,7 @@ import { Commit } from 'vuex'
 import { vuexState } from '../types/dataTypes'
 export default {
   state: {
+    navActiveColor: '#545c64',
     allLimit: [],   // 总路由表
     nowLimit: [],   // 当前路由表
     listLimit: [],  // 点击路由的树形
@@ -20,6 +21,9 @@ export default {
       state.clickRouter = ''
       state.xToken = ''
     },
+    MUT_NAVACTIVECOLOR (state: {navActiveColor: String}, value: String) {
+      state.navActiveColor = value
+    },
     MUT_ALLLIMIT ( state: { allLimit: Array<any> }, value: Array<any> ) {
       state.allLimit = value
     },
@@ -35,6 +39,9 @@ export default {
     MUT_NOWROUTER ( state: { nowRouter: {} }, value: {} ) {
       state.nowRouter = Object.assign({}, state.nowRouter, value)
     },
+    MUT_DEL_NOWROUTER (state: {nowRouter: any}, value: {itemName: string}) {
+      delete state.nowRouter[value.itemName]
+    },
     MUT_CLICKROUTER ( state: { clickRouter: String }, value: String ) {
       state.clickRouter = value
     },
@@ -45,6 +52,9 @@ export default {
   actions: {
     ACT_STATE_INT (context: {commit: Commit}) {
       context.commit('MUT_STATE_INT')
+    },
+    ACT_NAVACTIVECOLOR (context: {commit: Commit}) {
+      context.commit('MUT_NAVACTIVECOLOR')
     },
     ACT_ALLLIMIT ( context: { commit: Commit }, value: Array<any> ) {
       context.commit( 'MUT_ALLLIMIT', value )
@@ -60,6 +70,9 @@ export default {
     },
     ACT_NOWROUTER ( context: { commit: Commit }, value: {} ) {
       context.commit( 'MUT_NOWROUTER', value )
+    },
+    ACT_DEL_NOWROUTER (context: {commit: Commit}, value: {itemName: string}) {
+      context.commit('MUT_DEL_NOWROUTER', value)
     },
     ACT_CLICKROUTER ( context: { commit: Commit }, value: String ) {
       context.commit('MUT_CLICKROUTER', value)

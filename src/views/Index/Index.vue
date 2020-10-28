@@ -11,6 +11,7 @@
 <script lang="ts">
   import { Vue, Component } from 'vue-property-decorator'
   import MapChart from './components/MapChart.vue'
+  import { getPage } from '../../api/live/index'
   @Component({
     name: 'Index',
     components: {
@@ -21,9 +22,16 @@
     private msg: String = 'index'
     $router: any
 
+    mounted () {
+      this.getPage()
+    }
     goUser () {
       let _el: any = this.$refs['mapChart']
       _el.drawnReset('china')
+    }
+    async getPage () {
+      let _data = await getPage()
+      console.log('_data', _data)
     }
   }
 </script>

@@ -1,8 +1,6 @@
 @import './reset.less';
 #hlRouter {
   // height: @defaultSize*2.5;
-  .paddingRowDefault;
-  .borderDefault;
   .shadowDefault;
   ul {
     display: flex;
@@ -14,11 +12,21 @@
       .borderDefault;
       .handleDefault;
       .transitionDefault;
-      font-size: @defaultSize;
+      font-size: @defaultSize * 0.875;
       height: @defaultSize * 2;
       line-height: @defaultSize * 2;
       margin-right: @defaultSize * 0.5;
       border-radius: @defaultSize * 0.25;
+      .router-icon {
+        opacity: 0;
+        position: absolute;
+        color: #ffffff;
+        right: @defaultSize * 0.375;
+        top: 50%;
+        transform: translate(0, -50%);
+        z-index: 1000;
+        .transitionDefault;
+      }
       &.active{
         &::before {
           position: absolute;
@@ -35,6 +43,9 @@
       &.active,
       &:hover {
         .btnAction;
+        .router-icon {
+          opacity: 1;
+        }
       }
       &.default {}
     }

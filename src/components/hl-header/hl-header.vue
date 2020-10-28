@@ -40,10 +40,14 @@
     name: 'hl-header'
   })
   export default class hlHeader extends Vue {
-    @State private base!: { firstPath: String }
+    @State private base!: { firstPath: String, navActiveColor: String }
     @Action private ACT_STATE_INT!: () => void
     $router: any
-    
+    private styleColor: String = ''
+    mounted () {
+      let _base: { navActiveColor: String } = this.base
+      this.$set(this, 'styleColor', _base.navActiveColor)
+    }
     goHome () {
       let path: any = this.base.firstPath
       this.$router.push({

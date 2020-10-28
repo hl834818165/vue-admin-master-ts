@@ -2,7 +2,7 @@ import { router, resetRouter } from '@/router'
 import store from '../store'
 
 // 路由 - 懒加载
-const _import = (r: string) => (file: (arg0: any) => void) => require.ensure([], () => file(require(`@/views${ r }.vue`)))
+const _import = (r: string) => (file: (arg0: any) => void) => require.ensure([], () => file(require(`@/views${r}.vue`)))
 
 // 清空 - 路由
 const resetRouterFn = function () {
@@ -26,7 +26,7 @@ const filterRouter = function (list: Array<any>, pary: Array<any>) {
           name: item.name,
           requiresAuth: true
         },
-        component: _import(`${ item.link }`)
+        component: _import(`${item.link}`)
       })
     }
   })
@@ -60,7 +60,7 @@ const addRouter = function (list: Array<any>) {
  * 设置 - 路由
  * @param to 路由 - 信息
  */
-const setClickRouter = function (to: {meta: {flag: Boolean}, matched: Array<any>, name: String, path: String}) {
+const setClickRouter = function (to: { meta: { flag: Boolean }, matched: Array<any>, name: String, path: String }) {
   // let _meat = to.meta
   if (to.meta.flag) {
     return false
@@ -95,9 +95,48 @@ const filterNow = function (limit: Array<any>, now: String, routerMsg?: Array<an
     }
   }
 }
+const lightenDarkenColor = function (col: string, amt: number): string {
+
+  var usePound = false;
+
+  if (col[0] == "#") {
+    col = col.slice(1);
+    usePound = true;
+  }
+
+  var num: number = parseInt(col, 16);
+
+  var r = (num >> 16) + amt;
+
+  if (r > 255) r = 255;
+  else if (r < 0) r = 0;
+
+  var b = ((num >> 8) & 0x00FF) + amt;
+
+  if (b > 255) b = 255;
+  else if (b < 0) b = 0;
+
+  var g = (num & 0x0000FF) + amt;
+
+  if (g > 255) g = 255;
+  else if (g < 0) g = 0;
+
+  return (usePound ? "#" : "") + (g | (b << 8) | (r << 16)).toString(16);
+
+}
+const arrIndexOf = (arr: Array<String>, val: String) => {
+  for (let [e, i] of Object.keys(arr)) {
+    if (e == val) {
+      return i
+    }
+  }
+  return -1
+}
 export {
   resetRouterFn,
   filterRouter,
   addRouter,
-  setClickRouter
+  setClickRouter,
+  lightenDarkenColor,
+  arrIndexOf
 }

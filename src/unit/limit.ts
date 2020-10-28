@@ -110,7 +110,7 @@ const nowLimit = [{
   "level": 1,
   "sort": 3,
   "state": 1,
-  "link": "/Program/Program",
+  "link": "/Live/Live",
   "name": "节目管理",
   "children": [{
     "icon": "&#xe640;",
@@ -118,8 +118,18 @@ const nowLimit = [{
     "level": 2,
     "sort": 4,
     "state": 1,
-    "link": "/Program/ProgramList/ProgramList",
-    "name": "节目列表",
+    "link": "/LiveType/LiveType",
+    "name": "直播分类",
+    "parentName": "节目管理",
+    "children": []
+  }, {
+    "icon": "&#xe640;",
+    "iconSize": "24",
+    "level": 2,
+    "sort": 5,
+    "state": 1,
+    "link": "/Live/Live",
+    "name": "直播列表",
     "parentName": "节目管理",
     "children": []
   }]
@@ -127,21 +137,11 @@ const nowLimit = [{
   "icon": "&#xe640;",
   "iconSize": "24",
   "level": 1,
-  "sort": 5,
+  "sort": 6,
   "state": 1,
   "link": "/User",
   "name": "用户管理",
   "children": [{
-    "icon": "&#xe640;",
-    "iconSize": "24",
-    "level": 2,
-    "sort": 6,
-    "state": 1,
-    "link": "/User/UserAuth/UserAuth",
-    "name": "用户权限",
-    "parentName": "用户管理",
-    "children": []
-  }, {
     "icon": "&#xe640;",
     "iconSize": "24",
     "level": 2,
@@ -152,26 +152,6 @@ const nowLimit = [{
     "parentName": "用户管理",
     "children": []
   }]
-}, {
-  "icon": "&#xe640;",
-  "link": "/System",
-  "name": "系统设置",
-  "sort": 13,
-  "level": 1,
-  "state": 1,
-  "children":[{
-    "icon": "&#xe640;",
-    "link": "/System/User/User",
-    "path": "/System/User/User/:id",
-    "name": "用户管理",
-    "sort": 14,
-    "level": 2,
-    "state": 1,
-    "children": [],
-    "iconSize": "20",
-    "parentName": "系统设置"
-  }],
-  "iconSize": "24"
 }]
 export {
   allLimit,

@@ -4,13 +4,20 @@
   height: 100%;
   
   .table-box {
-    @paginationheight: (@defaultSize * 2.5 + @defaultSize * 1.25);
+    @paginationheight: (@defaultSize * 2.5 + @defaultSize * 0.75);
     height: calc(~'100% - @{paginationheight}');
   }
   .pagination-box {
     display: flex;
     align-items: center;
-    height: @defaultSize / 2.5;
-    margin-top: @defaultSize * 1.25;
+    height: @defaultSize * 2.5;
+    margin-top: @defaultSize * 0.75;
+  }
+  .el-table td, .el-table th {
+    font-size: @defaultSize * 0.75;
+    padding: @defaultSize * 0.375 0;
+  }
+  .el-table .cell {
+    padding: 0 @defaultSize * 0.375;
   }
 }

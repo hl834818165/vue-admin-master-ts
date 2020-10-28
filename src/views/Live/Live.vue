@@ -1,20 +1,39 @@
 <template lang="pug">
   div#table-page
+    div(
+      class="operate-box"
+    )
+      el-form(
+        class="operate-form"
+        :model="tableList.form"
+      )
+        el-form-item(
+          prop="keyword"
+        )
+          el-input(
+            type="text"
+            v-model="tableList.form.query.keyword"
+          )
+        el-form-item
+          el-button(
+            type="primary"
+          ) 搜索
     hl-table(
       :tableList="tableList"
     )
 </template>
+
 <script lang="ts">
   import { Vue, Component } from 'vue-property-decorator'
   import hlTable from '@/components/hl-table/hl-table.vue'
-  import { getPage } from '../../../api/user/index'
+  import { getPage, insertPage } from '../../api/live/index'
   @Component({
-    name: 'UserList',
+    name: 'Live',
     components: {
       hlTable
     }
   })
-  export default class UserList extends Vue {
+  export default class Live extends Vue {
     private tableList: {
       expandList: Array<any>,
       dataList: Array<any>,
@@ -23,7 +42,8 @@
         pageNo: Number,
         pageSize: Number,
         query: {
-          role: Number
+          role: Number,
+          keyword: String
         }
       }
     } = {
@@ -33,29 +53,20 @@
         label: 'ID',
         render: false,
       }, {
-        prop: 'avatarUrl',
-        label: '用户头像',
+        prop: 'live_pic',
+        label: '直播封面',
         render: (h: any, row: any) => {
           return h('img', {
             attrs: {
-              'src': row.avatarUrl,
+              'src': row.live_pic,
               'style': 'width: 64px;height: 64px;'
             }
           })
         }
       }, {
-        prop: 'openid',
-        label: '微信openid',
+        prop: 'live_url',
+        label: '直播地址',
         width: 240,
-        render: false
-      }, {
-        prop: 'nickName',
-        label: '用户名称',
-        render: false
-      }, {
-        prop: 'city',
-        label: '城市',
-        width: 'auto',
         render: false
       }, {
         prop: 'update_time',
@@ -70,17 +81,27 @@
         pageNo: 1,
         pageSize: 20,
         query: {
-          role: 1
+          role: 1,
+          keyword: ''
         }
       }
     }
+    private insertData: {} = {}
     created () {
       this.getPage()
     }
+
     async getPage () {
       let res = await getPage(this.tableList.form)
       this.$set(this.tableList, 'dataList', res.data)
       this.$set(this.tableList, 'total', res.total)
     }
+    async insertPage () {
+      let res = await insertPage(this.insertData)
+      console.log(res)
+    }
   }
 </script>
+<style lang="less">
+
+</style>

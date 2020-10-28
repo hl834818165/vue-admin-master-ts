@@ -1,6 +1,13 @@
+@import './reset.less';
+
 .home-box{
   height: 100%;
   .home-aside{}
-  .home-header{}
-  .home-main{}
+  .home-header,
+  .home-router {
+    padding: 0 @defaultSize * 0.75;
+  }
+  .home-main {
+    padding: @defaultSize * 0.75;
+  }
 }

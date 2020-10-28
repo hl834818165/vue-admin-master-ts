@@ -55,7 +55,10 @@
 #table-page{
   height: 100%;
 }
-
+#table-page {
+  display: flex;
+  flex-direction: column;
+}
 .hl-page-left-enter,
 .hl-page-left-leave-active {
   opacity: 0;
@@ -101,4 +104,13 @@
   color: @whiteColor;
   background-color: @activeColorHover;
   border-color: @activeColorHover;
+}
+
+.operate-item {
+  display: flex;
+  margin-bottom: @defaultSize * 0.75;
+  .search-item {
+    width: @defaultSize * 15;
+    margin-right: @defaultSize * 0.25;
+  }
 }
